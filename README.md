@@ -41,7 +41,7 @@ There's two ways to use hoopoe, either you can user [Hoopoe.app](https://hoopoe.
 ### Installation
 
 1. Get a free API Key at [https://hoopoe.app](https://hoopoe.app)
-2. Install NPM packages
+2. Install PyPI packages
    ```sh
    pip install hoopoe-python
    ```
@@ -53,12 +53,12 @@ There's two ways to use hoopoe, either you can user [Hoopoe.app](https://hoopoe.
 First import hoopoe-python and create an instance of it.
 
 ```python
-from hoopoe-python import Hoopoe 
+from hoopoe import Hoopoe 
 
 hoopoe = new Hoopoe({
     api_key: 'your_hoopoe_api_key',
     version: '1', # API version, default 1
-    base_url: 'https://...', # self-hosted only 
+    base_url: 'https://...', # self-hosted only, ignore if you're using Hoopoe Cloud
 })
 ```
 Then you can send a notification to yourself using like this:
@@ -70,6 +70,10 @@ hoopoe.upupa("Your message here", extra = {
 })
 ```
 
+By default the ```upupa``` command will send the code trace back you have the option to disable it:
+```python
+hoopoe.upupa("", extra={}, include_trace_back=False)
+```
 <!-- ROADMAP -->
 <!-- ## Roadmap
 
