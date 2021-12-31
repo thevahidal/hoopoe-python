@@ -70,7 +70,7 @@ hoopoe.upupa("Your message here", extra = {
 })
 ```
 
-By default the ```upupa``` command will send the code trace back you have the option to disable it:
+By default the ```upupa``` command will send the code trace back, you have the option to disable it:
 ```python
 hoopoe.upupa("", extra={}, include_trace_back=False)
 ```

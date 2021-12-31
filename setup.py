@@ -25,6 +25,11 @@ setup(
     packages=['hoopoe'],
     include_package_data=True,
     install_requires=["requests",],
+    extras_require={
+        'dev': [
+            'decouple',
+        ]
+    },
     entry_points={
         "console_scripts": [
         ]

@@ -1,5 +1,5 @@
 import requests
-from inspect import currentframe, getframeinfo
+from inspect import currentframe, getframeinfo, stack
 
 import hoopoe.constants as constants
 from hoopoe.utils import handle_response
@@ -9,7 +9,7 @@ class Hoopoe:
     def __init__(self, api_key, version, base_url=constants.base_url):
         if not api_key:
             raise ValueError("api_key is required")
-        if version and not version in constants.VERSIONS:
+        if version and not int(version) in constants.VERSIONS:
             raise ValueError("version is not valid")
 
         self.api_key = api_key
@@ -41,12 +41,12 @@ class Hoopoe:
         if include_trace_back:
             current_frame = currentframe()
             previous_frame = current_frame.f_back
-            
+
             filename, line_number, function_name, lines, index = getframeinfo(previous_frame)
             trace_back = {
                 "file": filename + ":" + str(line_number),
                 "function": function_name,
-                "lines": lines,
+                "stack": lines,
             }
             data["extra"] = {**data["extra"], "trace_back": trace_back}
 
