@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="hoopoe-python",
-    version="0.0.6",
+    version="0.0.7",
     description="Python SDK for Hoopoe",
     long_description=README,
     long_description_content_type="text/markdown",
