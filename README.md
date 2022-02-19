@@ -55,13 +55,13 @@ First import hoopoe-python and create an instance of it.
 ```python
 from hoopoe import Hoopoe 
 
-hoopoe = new Hoopoe({
-    api_key: 'your_hoopoe_api_key',
-    version: '1', # API version, default 1
-    base_url: 'https://...', # self-hosted only, ignore if you're using Hoopoe Cloud
-})
+hoopoe = Hoopoe(
+    api_key = 'your_hoopoe_api_key',
+    version = '1', # API version, default 1
+    base_url = 'https://...', # self-hosted only, ignore if you're using Hoopoe Cloud
+)
 ```
-Then you can send a notification to yourself using like this:
+Then you can send a notification to yourself using something like this:
 ```python
 hoopoe.upupa("Your message here", extra = {
     "extra": "info",
